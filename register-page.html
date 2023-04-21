@@ -311,7 +311,7 @@
 
 #testimonials-carousel > .carousel-indicators > li {
     display: inline-block;
-    width: calc(100% / 4 - 50px);
+    width: calc(100% / 5 - 50px); /* Calculation modified for 5th indicator in one row */
     height: 0.6rem;
     margin: 20px;
     text-indent: -999px;
@@ -323,7 +323,7 @@
 
 #testimonials-carousel .carousel-indicators .active {
     display: inline-block;
-    width: calc(100% / 4 - 50px);
+    width: calc(100% / 5 - 50px); /* Calculation modified for 5th indicator in one row */
     height: 0.6rem;
     margin: 20px;
     text-indent: -999px;
@@ -840,6 +840,8 @@ span.lia-button-link-arrow.lia-button-link-arrow-black {
     <li data-target="#testimonials-carousel" data-slide-to="1"></li>
     <li data-target="#testimonials-carousel" data-slide-to="2"></li>
     <li data-target="#testimonials-carousel" data-slide-to="3"></li>
+    <li data-target="#testimonials-carousel" data-slide-to="4"></li> <!-- li element added for carousel idicator -->
+
   </ol>
 
   <div class="carousel-inner">
@@ -926,6 +928,27 @@ span.lia-button-link-arrow.lia-button-link-arrow-black {
         </div>
      </div>
     </div>
+
+    <div class="item"> <!-- item element added for carousel with random data and photo -->
+     <div class="testimonials-quote-wrap">
+      <div class="testimonials-quote-element">
+        <div class="testimonials-quote">
+          <p>Innovation is the key to success, but it's only effective when it's accessible to all.</p>
+          <img class="testimonial-quote-mark-1" src="https://community.dynatrace.com/html/assets/quote_black.png">
+          <img class="testimonial-quote-mark-2" src="https://community.dynatrace.com/html/assets/quote_black.png">
+        </div>
+      </div>
+        <div class="testimonials-picture">
+          <div class="testimonials-picture-avatar">
+            <img src="https://images.pexels.com/photos/15023413/pexels-photo-15023413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+          </div>
+          <div class="testimonials-picture-name">
+            <h2>John Chen</h2>
+            <p>CEO</p>
+          </div>
+        </div>
+     </div>
+    </div> 
 
   <a class="left carousel-control" href="#testimonials-carousel" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
