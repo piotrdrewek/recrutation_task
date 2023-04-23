@@ -33,12 +33,37 @@
    <#case "kudos">
        <#assign orderClause = "ORDER BY kudos.sum(weight) DESC " />
    <#break>
+
    <#case "views">
        <#assign orderClause = "ORDER BY metrics.views DESC " />
    <#break>
+
    <#case "replies">
        <#assign orderClause = "ORDER BY replies.count(*) DESC " />
    <#break>
+
+   <#-- new sorting method by post time -->
+   <#case "postTime">
+       <#assign orderClause = "ORDER BY post_time DESC " />
+   <#break>
+
+   <#-- new sorting method by post time -->
+   <#case "kudosLow">
+       <#assign orderClause = "ORDER BY kudos.sum(weight) ASC " />
+   <#break>
+
+   <#-- new sorting method for unanswered -->
+   <#case "unanswered">
+       <#assign whereClause += "AND replies.count(*) = 0 " />
+       <#assign orderClause = "ORDER BY post_time DESC " />
+   <#break>
+
+   <#-- new sorting method for noSolution -->
+   <#case "noSolution">
+       <#assign whereClause += "AND conversation.solved = false " />
+       <#assign orderClause = "ORDER BY conversation.last_post_time DESC " />
+   <#break>
+
    <#default>
        <#assign orderClause = "ORDER BY conversation.last_post_time DESC " />
    <#break>
