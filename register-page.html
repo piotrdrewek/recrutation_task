@@ -106,10 +106,30 @@
     width: 80%;
 }
 
+/* New style  */
+.benefits-content-group { 
+    display: flex;
+}
+
+/* Flex-wrap off  */
 .benefits-content-list {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    min-width: 50%;
+}
+
+/* Conditional style switching below 900px  */
+@media (max-width: 900px) { 
+    .benefits-content-group {
+      flex-wrap: wrap;
+  }
+  .benefits-content-list {
+      min-width: 100%;
+  }
+  .benefits-content-list-element {
+    width: calc(100% / 3);
+  }
 }
 
 .benefits-content-list-element {
@@ -127,6 +147,10 @@
 
 .benefits-content-list-icon > img {
     height: 60px;
+}
+/* New conditional style for bigger icons on hover */
+.benefits-content-list-icon > img:hover {
+    height: 80px;
 }
 
 .benefits-content-list-description, .benefits-content-list-description-blue {
@@ -714,53 +738,57 @@ span.lia-button-link-arrow.lia-button-link-arrow-black {
     <div class="benefits-content-title">
       <p class="benefits-content-title-light">The Community gives you <b>endless opportunities</b></p>
     </div>
-    <div class="benefits-content-list">
-      <div class="benefits-content-list-element">
-        <div class="benefits-content-list-icon">
-          <img src="https://community.dynatrace.com/html/assets/unknown-gray_900.svg"/>
+    <div class="benefits-content-group"> <!-- new group for wrapping 3 elements in row -->
+      <div class="benefits-content-list"> <!--  divided into 2 list components  -->
+        <div class="benefits-content-list-element">
+          <div class="benefits-content-list-icon">
+            <img src="https://community.dynatrace.com/html/assets/unknown-gray_900.svg"/>
+          </div>
+          <div class="benefits-content-list-description">
+            <p><span class="benefits-content-list-description-blue">Ask questions</span><br> about Dynatrace Platform 24/7</p>
+          </div>
         </div>
-        <div class="benefits-content-list-description">
-          <p><span class="benefits-content-list-description-blue">Ask questions</span><br> about Dynatrace Platform 24/7</p>
+        <div class="benefits-content-list-element">
+          <div class="benefits-content-list-icon">
+            <img src="https://community.dynatrace.com/html/assets/light-bulb-gray_900.svg"/>
+          </div>
+          <div class="benefits-content-list-description">
+            <p><span class="benefits-content-list-description-blue">Submit ideas</span><br>Get your creativity recognized</p>
+          </div>
         </div>
-      </div>
-      <div class="benefits-content-list-element">
-        <div class="benefits-content-list-icon">
-          <img src="https://community.dynatrace.com/html/assets/light-bulb-gray_900.svg"/>
-        </div>
-        <div class="benefits-content-list-description">
-          <p><span class="benefits-content-list-description-blue">Submit ideas</span><br>Get your creativity recognized</p>
-        </div>
-      </div>
-      <div class="benefits-content-list-element">
-        <div class="benefits-content-list-icon">
-          <img src="https://community.dynatrace.com/html/assets/thumb-up-gray_900.svg"/>
-        </div>
-        <div class="benefits-content-list-description">
-          <p><span class="benefits-content-list-description-blue">Share your feedback</span><br>and shape the product together </p>
-        </div>
-      </div>
-      <div class="benefits-content-list-element">
-        <div class="benefits-content-list-icon">
-          <img src="https://community.dynatrace.com/html/assets/community-gray_900.svg"/>
-        </div>
-        <div class="benefits-content-list-description">
-          <p><span class="benefits-content-list-description-blue">Meet creators</span><br>Product Managers and Developers within reach</p>
+        <div class="benefits-content-list-element">
+          <div class="benefits-content-list-icon">
+            <img src="https://community.dynatrace.com/html/assets/thumb-up-gray_900.svg"/>
+          </div>
+          <div class="benefits-content-list-description">
+            <p><span class="benefits-content-list-description-blue">Share your feedback</span><br>and shape the product together </p>
+          </div>
         </div>
       </div>
-      <div class="benefits-content-list-element">
-        <div class="benefits-content-list-icon">
-          <img src="https://community.dynatrace.com/html/assets/businessuser-gray_900.svg"/>
+      <div class="benefits-content-list"> <!--  divided into 2 list components  -->
+        <div class="benefits-content-list-element">
+          <div class="benefits-content-list-icon">
+            <img src="https://community.dynatrace.com/html/assets/community-gray_900.svg"/>
+          </div>
+          <div class="benefits-content-list-description">
+            <p><span class="benefits-content-list-description-blue">Meet creators</span><br>Product Managers and Developers within reach</p>
+          </div>
         </div>
-        <div class="benefits-content-list-description">
-          <p><span class="benefits-content-list-description-blue">Get recognition</span><br>Climb ranks and triumph in leaderboards</p>
+        <div class="benefits-content-list-element">
+          <div class="benefits-content-list-icon">
+            <img src="https://community.dynatrace.com/html/assets/businessuser-gray_900.svg"/>
+          </div>
+          <div class="benefits-content-list-description">
+            <p><span class="benefits-content-list-description-blue">Get recognition</span><br>Climb ranks and triumph in leaderboards</p>
+          </div>
         </div>
-      </div>
-      <div class="benefits-content-list-element">
-        <div class="benefits-content-list-icon">
-          <img src="https://community.dynatrace.com/html/assets/plugin-gray_900.svg"/>
-        </div>
-        <div class="benefits-content-list-description">
-          <p><span class="benefits-content-list-description-blue">Extend and explore</span><br>Build extensions and learn from other experts</p>
+        <div class="benefits-content-list-element">
+          <div class="benefits-content-list-icon">
+            <img src="https://community.dynatrace.com/html/assets/plugin-gray_900.svg"/>
+          </div>
+          <div class="benefits-content-list-description">
+            <p><span class="benefits-content-list-description-blue">Extend and explore</span><br>Build extensions and learn from other experts</p>
+          </div>
         </div>
       </div>
     </div>
