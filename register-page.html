@@ -586,6 +586,19 @@
         text-decoration: none;
 }
 
+/* New styles for button with link to google maps */
+.lia-button-fifth {
+    background: #7f00ff;
+    border: 2px solid #7f00ff;
+    color: #FFFFFF;
+}
+
+.lia-button-fiftj:hover {
+        background: #6600cc;
+        border: 2px solid #6600cc;
+        color: #FFFFFF;
+        text-decoration: none;
+}
 
 /*New link button*/
 
@@ -853,6 +866,18 @@ span.lia-button-link-arrow.lia-button-link-arrow-black {
     </div>
   </div>
 </div>
+<!-- Script that create a div element with a button and appends it to the existing map element -->
+<script>
+  const mapContent = document.getElementsByClassName("map-content")[0];
+  const div = document.createElement("div");
+  const button = document.createElement("a");
+  button.innerText = "Go to maps";
+  button.href = "https://www.google.pl/maps/";
+  button.target = "_blank";
+  button.className = "lia-button lia-button-fifth";
+  div.appendChild(button);
+  mapContent.appendChild(div);
+</script>
 
 <div class="testimonials-wrapper">
   <div class="testimonials-content">
